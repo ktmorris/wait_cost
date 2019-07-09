@@ -59,7 +59,7 @@ nc <- left_join(nc, pop, by = c("zip_code" = "GEOID")) %>%
 ####
 
 keep_zips <- voted_at_polls %>% 
-  filter(state %in% c("North Carolina", "Florida")) %>% 
+  filter(state %in% c("North Carolina")) %>% 
   group_by(zip_code) %>% 
   summarize(obs = n(),
             wait = weighted.mean(minutes, weight))
